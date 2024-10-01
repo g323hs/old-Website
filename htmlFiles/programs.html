@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Sketches</title>
+    
+    <!-- css file -->
+    <link rel="stylesheet" href="../cssFiles/defaultStyle.css">
+    <link rel="stylesheet" href="../cssFiles/programsStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Sketches</h1>
+    </header>
+
+    <div class="sticky">
+        <div class="navbar">
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fa">&#xf0c9;</i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="../index.html">Home</a>
+                    <a href="#perlin1d_top">1D Perlin</a>
+                    <a href="#perlin2d_top">2D Perlin</a>
+                    <a href="#recursiveTree_top">Recursive Tree</a>
+                    <a href="#perlinWorld_top">Perlin World</a>
+                    <a href="#mazeMakerSolver_top">Maze Maker</a>
+                    <a href="#cellularAutomata_top">Cellular Automata</a>
+                    <a href="#pathFinding_top">Path Finding</a>
+                    <a href="#marchingSquares_top">Marching Squares</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <div class="text-block"> 
+        Here I present a collection of interactive programs developed using the <a href="https://p5js.org">p5.js</a> library. Throughout my coding journey I have enjoyed conveying my ideas and code through visual mediums, making complex concepts more accessible and engaging for others. The library, p5.js, is a powerful JavaScript library that simplifies the process of creating visual art and interactive graphics within a web browser.
+        <p>
+        The sketches featured here explore a variety of themes, ranging from algorithmic art to computational simulations. Each project represents a different facet of my interests over time. Through these works, I aim to not only showcase a wide array of intruiging computational concepts. I hope you enjoy!
+        </p>
+    </div>
+    
+    <div class="sketch-grid">
+        <!-- 1D Perlin Sketch -->
+        <div class="sketch-wrapper">
+          <h2 class="sketch-title">Perlin 1D</h2>
+          <div class="description">
+              <p>
+                  This program visualizes Perlin noise in one dimension using a series of ellipses plotted along the x-axis. Perlin noise is a type of gradient noise often used to create natural-looking patterns in computer graphics. Each ellipse's y-coordinate is determined by the Perlin noise function, resulting in a smooth, flowing line of points.
+              </p>
+              
+              <h3>Program Setup:</h3>
+              <ul>
+                  <li><strong>Noise Function:</strong> The program generates Perlin noise values along the x-axis, which are then mapped to the y-coordinates of the ellipses.</li>
+                  <li><strong>Visualization:</strong> The ellipses form a dynamic wave-like pattern that smoothly transitions over time.</li>
+              </ul>
+              
+              <h3>How to Use the Program:</h3>
+              <ol>
+                  <li><strong>Animation:</strong> Click on the canvas to start or stop the animation. The wave-like pattern will animate over time, demonstrating the continuous nature of Perlin noise.</li>
+                  <li><strong>Reset:</strong> Click the "Reset" button to restart the visualization with a new set of Perlin noise values.</li>
+              </ol>
+              
+              <h3>Visual Representation:</h3>
+              <p>
+                  <strong>Ellipses:</strong> Represent individual points along the Perlin noise curve. Their positions change smoothly over time, creating an organic flow.<br>
+                  <strong>Wave Pattern:</strong> The wave represents the Perlin noise function, illustrating how small changes in input produce smooth variations in output.
+              </p>
+              
+              <p>
+                  This program offers a simple yet effective way to visualize 1D Perlin noise and its applications in generating organic, flowing patterns.
+              </p>
+          </div>
+          <div class="sketch-container" id="perlin1d"></div>
+        </div>
+
+        <!-- 2D Perlin Sketch -->
+        <div class="sketch-wrapper" id="perlin2d_top">
+            <h2 class="sketch-title">Perlin 2D</h2>
+            <div class="description">
+                <p>
+                    This program visualizes Perlin noise in two dimensions using a dynamic grid of square cells. Perlin noise is commonly used in computer graphics for creating textures, terrain, and other procedural effects. The grid updates in real-time, producing a smoothly shifting grayscale pattern.
+                </p>
+                
+                <h3>Program Setup:</h3>
+                <ul>
+                    <li><strong>Grid Configuration:</strong> The canvas is divided into a grid of square cells. The size of the cells is determined by user-defined variables, which control the number of cells along the x and y axes.</li>
+                    <li><strong>Noise Values:</strong> Each cell's color is determined by a Perlin noise value, which is mapped to a grayscale intensity ranging from black (0) to white (1).</li>
+                </ul>
+                
+                <h3>How to Use the Program:</h3>
+                <ol>
+                    <li><strong>Animation:</strong> Click on the canvas to pause or resume the animation. The grid will smoothly transition as noise values change over time.</li>
+                    <li><strong>Reset:</strong> Click the "Reset" button to generate a new set of Perlin noise values for the grid.</li>
+                    <li><strong>Interactive Pause:</strong> Clicking the canvas pauses the animation, allowing users to observe the static noise pattern.</li>
+                </ol>
+                
+                <h3>Visual Representation:</h3>
+                <p>
+                    <strong>Grid Cells:</strong> Each cell represents a point in the Perlin noise field, with its color indicating the noise value at that point.<br>
+                    <strong>Dynamic Pattern:</strong> The pattern evolves smoothly over time, showcasing the continuous nature of Perlin noise in two dimensions.
+                </p>
+                
+                <p>
+                    This program is a powerful tool for visualizing 2D Perlin noise and understanding its applications in generating realistic, natural-looking textures and patterns.
+                </p>
+            </div>
+            <div class="sketch-container" id="perlin2d"></div>
+        </div>  
+
+        <!-- Recursive Tree Sketch -->
+        <div class="sketch-wrapper" id="recursiveTree_top">
+            <h2 class="sketch-title">Recursive Tree</h2>
+            <div class="description">
+                <p>
+                    This program visualizes a fractal tree using recursion. Starting from a single trunk, the tree branches out repeatedly, creating smaller branches at defined angles. The result is a detailed tree-like structure that changes over time.
+                </p>
+                
+                <h3>Program Setup:</h3>
+                <ul>
+                    <li><strong>Recursion Depth:</strong> The number of times the tree branches is determined by the recursion depth, which controls the complexity of the tree.</li>
+                    <li><strong>Branch Angles:</strong> Each branch splits at a specified angle, creating a balanced and symmetric fractal pattern.</li>
+                </ul>
+                
+                <h3>How to Use the Program:</h3>
+                <ol>
+                    <li><strong>Tree Growth:</strong> The tree starts with a trunk and grows branches recursively. Each branch splits into smaller branches until the recursion limit is reached.</li>
+                    <li><strong>Interactive Elements:</strong> Click the canvas to change the tree's branching angle and depth, altering its shape and complexity.</li>
+                </ol>
+                
+                <h3>Visual Representation:</h3>
+                <p>
+                    <strong>Tree Branches:</strong> Each branch is drawn recursively, creating a complex and detailed fractal pattern.<br>
+                    <strong>Fractal Structure:</strong> The tree showcases the beauty of recursive patterns, with each branch mimicking the overall shape of the tree.
+                </p>
+                
+                <p>
+                    This program offers an intuitive way to explore fractal geometry and recursion through the visualization of a growing tree.
+                </p>
+            </div>
+            <div class="sketch-container" id="recursiveTree"></div>
+        </div>
+        
+        <!-- Perlin World Sketch -->
+        <div class="sketch-wrapper" id="perlinWorld_top">
+            <h2 class="sketch-title">Perlin World</h2>
+            <div class="description">
+                <p>
+                    This program showcases the versatility of Perlin noise in creating a complex, dynamic world. Almost every element, including the mountains, sea, trees, clouds, and sun, is influenced by Perlin noise, demonstrating how it can be used to simulate natural environments and movements.
+                </p>
+                
+                <h3>Program Setup:</h3>
+                <ul>
+                    <li><strong>Landscape Elements:</strong> Mountains, sea waves, and cloud shapes are generated and animated using Perlin noise values.</li>
+                    <li><strong>Tree Positioning:</strong> Tree placement and swaying motion are controlled by Perlin noise, adding randomness and natural variation.</li>
+                    <li><strong>Sun Size:</strong> The size of the sun changes over time, influenced by Perlin noise to simulate a dynamic sky.</li>
+                </ul>
+                
+                <h3>How to Use the Program:</h3>
+                <ol>
+                    <li><strong>Dynamic World:</strong> All elements in the scene evolve continuously, demonstrating the seamless nature of Perlin noise-based animations.</li>
+                    <li><strong>Interactive Elements:</strong> Click on various parts of the canvas to interact with the world, affecting the Perlin noise values and the scene's appearance.</li>
+                </ol>
+                
+                <h3>Visual Representation:</h3>
+                <p>
+                    <strong>Mountains:</strong> Smoothly curved, randomly positioned mountains represent the terrain.<br>
+                    <strong>Sea:</strong> The water's movement and wave patterns are animated using Perlin noise.<br>
+                    <strong>Trees:</strong> Trees are positioned with slight variations, swaying gently over time.<br>
+                    <strong>Clouds:</strong> Clouds float across the sky, changing shape as they move.
+                </p>
+                
+                <p>
+                    This sketch provides an immersive demonstration of how Perlin noise can be used to create a complex, animated world with natural-looking elements.
+                </p>
+            </div>
+            <div class="sketch-container" id="perlinWorld"></div>
+        </div> 
+
+        <!-- Maze Maker and Solver Sketch -->
+        <div class="sketch-wrapper" id="mazeMakerSolver_top">
+            <h2 class="sketch-title">Maze Maker and Solver</h2>
+            <div class="description">
+                <p>
+                    This program generates and solves mazes using a recursive backtracking algorithm. The maze is created by removing walls between adjacent cells, while the solver uses a pathfinding algorithm to find the shortest route from the start to the end.
+                </p>
+                
+                <h3>Program Setup:</h3>
+                <ul>
+                    <li><strong>Maze Generation:</strong> A grid of cells starts with all walls intact. The program removes walls to create a random, solvable maze.</li>
+                    <li><strong>Solver Algorithm:</strong> The program uses a backtracking method to find the shortest path through the maze, visualized step-by-step as the solver explores the grid.</li>
+                </ul>
+                
+                <h3>How to Use the Program:</h3>
+                <ol>
+                    <li><strong>Maze Creation:</strong> The maze is generated dynamically by selecting random neighboring cells and removing walls to create a path.</li>
+                    <li><strong>Solving the Maze:</strong> The solver starts at the maze entrance and explores possible paths until it finds the exit.</li>
+                </ol>
+                
+                <h3>Visual Representation:</h3>
+                <p>
+                    <strong>Maze Cells:</strong> Represent the structure of the maze, with walls and open paths.<br>
+                    <strong>Path Finder:</strong> Visualized as a moving point or line, showing the current exploration path.<br>
+                    <strong>Solution Path:</strong> The final path from start to end is highlighted once found.
+                </p>
+                
+                <p>
+                    This program demonstrates maze generation and solving techniques, providing an interactive way to visualize these algorithms in action.
+                </p>
+            </div>
+            <div class="sketch-container" id="mazeMakerSolver"></div>
+        </div>
+        
+        <!-- Cellular Automata Sketch -->
+        <div class="sketch-wrapper" id="cellularAutomata_top">
+            <h2 class="sketch-title">Cellular Automata</h2> 
+            <div class="description">
+                <p>
+                    This Cellular Automata program is a simple interactive simulation based on Conway's Game of Life. It consists of a grid of cells that evolve over time according to a set of rules. Each cell can be in one of two states: alive or dead. The state of each cell in the next generation is determined by the number of its live neighbors.
+                  </p>
+                
+                  <h3>Rules of the Simulation:</h3>
+                  <ul>
+                    <li><strong>Survival:</strong> A live cell with 2 or 3 live neighbors stays alive.</li>
+                    <li><strong>Death by Isolation:</strong> A live cell with fewer than 2 live neighbors dies.</li>
+                    <li><strong>Death by Overpopulation:</strong> A live cell with more than 3 live neighbors dies.</li>
+                    <li><strong>Reproduction:</strong> A dead cell with exactly 3 live neighbors becomes alive.</li>
+                  </ul>
+                
+                  <h3>How to Use the Program:</h3>
+                  <ol>
+                    <li><strong>Starting the Program:</strong> The grid initializes with all cells in the dead state. Click the "Start Simulation" button to begin the cellular automata simulation. The cells will start evolving based on the rules mentioned above.</li>
+                    <li><strong>Pausing and Resuming the Simulation:</strong> Click the "Pause Simulation" button (which appears after starting) to pause the simulation at any point. Click again to resume.</li>
+                    <li><strong>Resetting the Simulation:</strong> Click the "Reset Simulation" button to clear the grid and stop the simulation. All cells will return to their initial dead state.</li>
+                    <li><strong>Randomizing the Grid:</strong> Click the "Random Simulation" button to populate the grid with a random distribution of live and dead cells. This provides a new starting point for the simulation.</li>
+                    <li><strong>Manually Toggling Cells:</strong> You can manually toggle the state of individual cells by clicking on them within the grid. Click a cell to make it alive if it is dead or vice versa.</li>
+                    <li><strong>Interacting with the Grid:</strong> The grid is divided into cells, and each cell's state is updated with each generation of the simulation. The state changes are based on the neighbors' states, providing a dynamic and evolving pattern.</li>
+                  </ol>
+                
+                  <h3>Visual Representation:</h3>
+                  <p>
+                    <strong>Alive Cells:</strong> Represented by a filled square, which can be black or another dark color depending on the implementation.<br>
+                    <strong>Dead Cells:</strong> Represented by an empty or white square.<br>
+                    <strong>Hover Effect:</strong> When you hover over a cell, its color may change to indicate potential interaction.
+                  </p>
+                
+                  <p>
+                    This program allows for experimentation and observation of the complex patterns that emerge from simple rules, demonstrating the beauty and unpredictability of cellular automata. I recommend creating a geometric pattern and finding out what happens!
+                  </p>
+            </div>
+            <div class="sketch-container" id="cellularAutomata"></div>
+        </div>
+
+        <!-- Path Finding Sketch -->
+        <div class="sketch-wrapper" id="pathFinding_top">
+          <h2 class="sketch-title">Path Finding</h2> 
+          <div class="description">
+            <p>
+              The initial inspiration for this program was to shocase Djikstra's pathfinding algorithm on a grid. However this lead me to the challenge I had't planned of generating a randomly connected grid. There are many ways to do this but I felt the most visually appealing would be a grid of nodes where each node can connect only to it's neighbours. 
+            </p>
+            <p>
+              This program demonstrates how a pathfinding algorithm navigates a grid to find the shortest path between two points. The program visualizes the algorithm's step-by-step process in a grid of nodes that may or may not be connected. Each node is represented as a circle, and connections between nodes are drawn with lines of varying color intensity to indicate different path weights. 
+            </p>
+          
+            <h3>Program Setup:</h3>
+            <ul>
+              <li><strong>Grid Dimensions:</strong> The grid consists of <input type="number" class="number_input" id="pathFindingX" value ="5" min="2" max="20" step="1">x<input type="number" class="number_input" id="pathFindingY" value ="5" min="1" max="5" step="1"> nodes, with each node potentially connected to its neighbors.</li>
+              <li><strong>Connection and Node Probability:</strong> Nodes are generated at each grid point at a probability of <input type="number" id="pathFindingProbNode" value ="0.7" min="0.1" max="1" step="0.1"> and a connection between to adjacent nodes is made with probability <input type="number" id="pathFindingProbConn" value ="0.8" min="0" max="1" step="0.1">, making the grid more or less connected.</li>
+              <li><strong>Path Weights:</strong> Path weights range between 1 and <input type="number" class="number_input" id="pathFindingNGrades" value ="3" min="2" max="20" step="1">. This is the number it will add to the path length when traversing that section of the grid.</li>
+            </ul>
+          </div>
+          
+          <div class="sketch-container" id="pathFinding"></div>
+        </div>
+
+        <!-- Marching Squares Sketch -->
+        <div class="sketch-wrapper" id="marchingSquares_top">
+            <h2 class="sketch-title">Marching Squares</h2> 
+            <div class="description">
+              <p>
+                The initial inspiration for this program was to shocase Djikstra's pathfinding algorithm on a grid. However this lead me to the challenge I had't planned of generating a randomly connected grid. There are many ways to do this but I felt the most visually appealing would be a grid of nodes where each node can connect only to it's neighbours. 
+              </p>
+              <p>
+                This program demonstrates how a pathfinding algorithm navigates a grid to find the shortest path between two points. The program visualizes the algorithm's step-by-step process in a grid of nodes that may or may not be connected. Each node is represented as a circle, and connections between nodes are drawn with lines of varying color intensity to indicate different path weights. 
+              </p>
+            
+              <h3>Program Setup:</h3>
+              <!-- <ul>
+                <li><strong>Grid Dimensions:</strong> The grid consists of <input type="number" class="number_input" id="pathFindingX" value ="5" min="2" max="20" step="1">x<input type="number" class="number_input" id="pathFindingY" value ="5" min="1" max="5" step="1"> nodes, with each node potentially connected to its neighbors.</li>
+                <li><strong>Connection and Node Probability:</strong> Nodes are generated at each grid point at a probability of <input type="number" id="pathFindingProbNode" value ="0.7" min="0.1" max="1" step="0.1"> and a connection between to adjacent nodes is made with probability <input type="number" id="pathFindingProbConn" value ="0.8" min="0" max="1" step="0.1">, making the grid more or less connected.</li>
+                <li><strong>Path Weights:</strong> Path weights range between 1 and <input type="number" class="number_input" id="pathFindingNGrades" value ="3" min="2" max="20" step="1">. This is the number it will add to the path length when traversing that section of the grid.</li>
+              </ul> -->
+            </div>
+            <div class="sketch-container" id="marchingSquares"></div>
+          </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 George Hildick-Smith. All rights reserved.</p>
+
+
+        <!-- p5.js file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    
+    <!-- Sketches -->
+    <script src="../jsFiles/perlin1d/perlin1d.js"></script>
+    <script src="../jsFiles/perlin2d/perlin2d.js"></script>
+    <script src="../jsFiles/perlinWorld/perlinWorld.js"></script>
+    <script src="../jsFiles/mazeMakerSolver/mazeMakerSolver.js"></script>
+    <script src="../jsFiles/recursiveTree/recursiveTree.js"></script>
+    <script src="../jsFiles/cellularAutomata/cellularAutomata.js"></script>
+    <script src="../jsFiles/pathFinding/pathFinding.js"></script>  
+    <script src="../jsFiles/marchingSquares/marchingSquares.js"></script>    
+
+    <!-- Sketch managing files -->
+    <script src="../jsFiles/Managers/sketchManager.js"></script>
+    <script src="../jsFiles/Managers/loadManager.js"></script>
+    </footer>
+</body>
+
+</html>
